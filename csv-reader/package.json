@@ -1,0 +1,21 @@
+{
+  "name": "csv-reader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:build": "tsc -w",
+    "start:run": "nodemon ./build/src",
+    "start" : "concurrently npm:start:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "tslib": "^2.6.2"
+  }
+}
