@@ -1,12 +1,18 @@
 import { ApiSync } from './models/ApiSync';
 import { Attributes } from './models/Attributes';
-import { IUser } from './models/User';
+import { IUser, User } from './models/User';
 
-const attr = new Attributes({
+const user = User.buildUser({
   age: 12,
   name: 'sameh',
 });
 
-const a = attr.get('name')
+console.log(user.get('name'));
+user.on('change', () => {
+  console.log('change fired');
+});
 
-console.log(a)
+user.set({ name: 'banana' });
+
+user.save();
+console.log(user);
