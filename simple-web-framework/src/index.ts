@@ -1,16 +1,12 @@
-import { Eventing } from './models/Eventing';
+import { ApiSync } from './models/ApiSync';
+import { Attributes } from './models/Attributes';
+import { IUser } from './models/User';
 
-const events = new Eventing();
-
-events.on('change', () => {
-  console.log('doing a change event');
+const attr = new Attributes({
+  age: 12,
+  name: 'sameh',
 });
 
-const btnNode = document.createElement('button');
-btnNode.onclick = () => {
-  events.trigger('change');
-};
-btnNode.innerText = 'click me daddy';
-document.body.appendChild(btnNode);
+const a = attr.get('name')
 
-// events.trigger('change');
+console.log(a)
