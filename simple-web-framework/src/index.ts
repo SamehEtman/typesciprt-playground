@@ -1,18 +1,12 @@
-import { ApiSync } from './models/ApiSync';
-import { Attributes } from './models/Attributes';
-import { IUser, User } from './models/User';
+import { User } from './models/User';
+import { UserEdit } from './views/UserEdit';
+import { View } from './views/View';
 
 const user = User.buildUser({
+  name: 'NAME',
   age: 12,
-  name: 'sameh',
 });
 
-console.log(user.get('name'));
-user.on('change', () => {
-  console.log('change fired');
-});
+const userEdit = new UserEdit(document.querySelector('#root') as Element, user);
 
-user.set({ name: 'banana' });
-
-user.save();
-console.log(user);
+userEdit.render();

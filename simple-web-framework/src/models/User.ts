@@ -17,4 +17,8 @@ export class User extends Model<IUser> {
       new Attributes(attr),
     );
   }
+
+  setRandomAge() {
+    
+  }
 }
